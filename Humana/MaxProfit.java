@@ -1,5 +1,3 @@
-package phone;
-
 import java.util.*;
 import java.io.*;
 
@@ -8,7 +6,7 @@ import java.io.*;
  * Ref:
  */
 
-public class MultiValueHashMapImplementation {
+public class MaxProfit {
 
     public static void main(String[] args) {
 
