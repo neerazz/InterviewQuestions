@@ -1,0 +1,18 @@
+/*************************
+
+// Design a series of classes that will allow us build an in-memory implementation of a Parking Lot
+// 1. Should be able to park and exit a vehicle.
+// 2. Parking lots should have capacity limits and when a parking lot is full, new vehicles shouldn't be allowed to park.
+//    Each vehicle should be assigned a parking slot number when it enters the lot.
+// 3. Ability to be able to support different types of Vehicles that can park in the lot (i.e. Compact, Standard, EV)
+//    each of which can have different prices and slots that they can park in the parking lot).
+//.    Compact can park in a compact or standard spot; standard can park in stardard spot; EV can park in compact, standard or EV
+// 4.  Upon exiting, we need to charge a parking fee depending on how long a vehicle.Vehicle is parked and the type of vehicle.
+//     Rates: Compact - $1/hr; Standard - $2/hr; EV - $3/hr
+// 4. OPTIONAL Parking lots should be able to support discounts for long term parking (24+ hours).
+//    The discount is a flat 10% reduction on the total fee charged to the customer for all vehicle.Vehicle types.
+// 5. OPTIONAL Parking lots should support event pricing which should allow the parking lot owner to charge a higher
+//    rate if cars exit while the parking lot supports event pricing (boolean flag isEventPricingEnabled = true)
+//    Rates: Compact - 10% increase; Standard - 20% increase; EV - 30% increase
+
+//*************************
