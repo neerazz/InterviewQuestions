@@ -1,8 +1,9 @@
-import java.io.*;
+package phone;
+
 import java.util.*;
 
 
-class Solution {
+public class TransactionLogs {
   
   public static List<String> getFraudIds(String[] input, int threshold) {
     

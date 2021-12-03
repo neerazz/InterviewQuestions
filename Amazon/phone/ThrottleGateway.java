@@ -1,3 +1,5 @@
+package phone;
+
 import java.io.*;
 import java.util.*;
 
@@ -16,14 +18,14 @@ import java.util.*;
 
 */
 
-class Solution {
-  
-  public static final int MAX_PER_SECOND = 3;
-  public static final int MAX_TEN_SECONDS = 20;
-  public static final int MAX_PER_MINUTE = 60;
-  
+public class ThrottleGateway {
 
- public int droppedRequests(int[] requestTime) {
+    public static final int MAX_PER_SECOND = 3;
+    public static final int MAX_TEN_SECONDS = 20;
+    public static final int MAX_PER_MINUTE = 60;
+
+
+    public static int droppedRequests(int[] requestTime) {
         if (requestTime == null || requestTime.length == 0) {
             return 0;
         }
@@ -62,16 +64,12 @@ class Solution {
             drop += toDrop;
         }
         return drop;
-    } 
-  
-  
-  
-  
-  
- public static void main(String[] args) {
-   Solution s = new Solution();
-   int[] requestTime2 = new int[]
-   {1, 1, 1, 1, 2, 2, 2, 3, 3, 3, 4, 4, 4, 5, 5, 5, 6, 6, 6, 7, 7, 7, 7, 11, 11, 11, 11};
-    System.out.println(s.droppedRequests(requestTime2));
-  }
+    }
+
+
+    public static void main(String[] args) {
+        int[] requestTime2 = new int[]
+                {1, 1, 1, 1, 2, 2, 2, 3, 3, 3, 4, 4, 4, 5, 5, 5, 6, 6, 6, 7, 7, 7, 7, 11, 11, 11, 11};
+        System.out.println(droppedRequests(requestTime2));
+    }
 }
