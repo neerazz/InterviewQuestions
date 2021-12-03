@@ -1,4 +1,6 @@
-public class Solution {
+package codility;
+
+public class MaxPossibleValue_1 {
     public static void main(String[] args) {
         System.out.println(largestNumber(268));
         System.out.println(largestNumber(670));

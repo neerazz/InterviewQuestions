@@ -1,12 +1,8 @@
+package codility;
 
-import java.io.*;
-import java.util.*;
-
-
-
-class Solution {
+public class LargestAlphabeticCharacter {
   
-  public String largestAlphabeticChar(String input) {
+  public static String largestAlphabeticChar(String input) {
     int start = 0, end = input.length() - 1;
     int index = -1;
     boolean[] lowercase = new boolean[26];
@@ -29,9 +25,8 @@ class Solution {
  
   
   public static void main(String[] args) {
-     Solution s = new Solution();
-     System.out.println(s.largestAlphabeticChar("admeDCAB"));
-     System.out.println(s.largestAlphabeticChar("aaaaaa"));
-     System.out.println(s.largestAlphabeticChar("CodilIty"));
+     System.out.println(largestAlphabeticChar("admeDCAB"));
+     System.out.println(largestAlphabeticChar("aaaaaa"));
+     System.out.println(largestAlphabeticChar("CodilIty"));
   }
 }

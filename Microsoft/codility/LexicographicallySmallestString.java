@@ -1,49 +1,47 @@
 package codility;
 
-/**
- * Created on:  Oct 31, 2020
- * Questions: https://leetcode.com/discuss/interview-question/366869/
+import java.util.*;
+
+/*
+
+  a b c z d -> a b c d 
+  
+  x y a z -> x y z
+  
+  
+  z x y z 
+
  */
 
 public class LexicographicallySmallestString {
 
+    private static String getSmallString(String s) {
+        if (s == null || s.length() == 0) return s;
+        StringBuilder sb = new StringBuilder();
+        Stack<Character> stack = new Stack<>();
+        int counter = 0;
+        for (int i = 0; i < s.length(); i++) {
+            char c = s.charAt(i);
+            if (!stack.isEmpty() && counter < 1 && stack.peek() > c) {
+                stack.pop();
+                ++counter;
+            }
+            stack.push(c);
+        }
+
+        if (counter == 0)
+            stack.pop();
+
+        while (!stack.isEmpty())
+            sb.insert(0, stack.pop());
+
+        return sb.toString();
+    }
+
     public static void main(String[] args) {
-        System.out.println(smallestString("abczd"));
-        System.out.println(smallestString_optimal("abczd"));
-    }
-
-    private static String smallestString_optimal(String str) {
-        int len = str.length();
-        for (int i = 0; i < len - 1; i++) {
-            if (str.charAt(i) > str.charAt(i + 1)) {
-                return str.substring(0, i) + str.substring(i + 1);
-            }
-        }
-        return str.substring(0, len - 1);
-    }
-
-    private static String smallestString(String str) {
-        String result = str;
-        for (int i = 0; i < str.length(); i++) {
-            if (compare(result, str, i) > 0) {
-                result = str.substring(0, i) + (i < str.length() ? str.substring(i + 1) : "");
-            }
-        }
-        return result;
-    }
-
-    private static int compare(String str1, String str2, int ignore) {
-        int p1 = 0, p2 = 0, len = str1.length();
-        for (int i = 0; i < len; i++) {
-            if (i == ignore) {
-                p2++;
-            } else if (str1.charAt(p1) == str2.charAt(p2)) {
-                p1++;
-                p2++;
-            } else {
-                return Character.compare(str1.charAt(p1), str2.charAt(p2));
-            }
-        }
-        return 0;
+        String s1 = "abczd";
+        System.out.println(getSmallString(s1));
+        String s2 = "axyz";
+        System.out.println(getSmallString(s2));
     }
 }

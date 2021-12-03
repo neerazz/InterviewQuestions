@@ -1,6 +1,5 @@
 package parking;
 
-import lombok.Data;
 import vehicle.Vehicle;
 import vehicle.VehicleType;
 
@@ -15,7 +14,6 @@ import static parking.ParkingSlotStatus.AVAILABLE;
 import static parking.ParkingSlotStatus.OCCUPIED;
 import static vehicle.VehicleType.*;
 
-@Data
 public class ParkingLot {
     private List<ParkingSlot> compactParkingSlots;
     private List<ParkingSlot> standardParkingSlots;
@@ -116,15 +114,16 @@ public class ParkingLot {
         parkingSlot.setVehicle(vehicle);
         parkingSlot.setTimeParked(LocalDateTime.now());
         parkingSlot.setParkingSlotStatus(OCCUPIED);
-        return ParkingTicket.builder()
-                .parkingSlotNumber(parkingSlot.getParkingNumber())
-                .parkingTime(parkingSlot.getTimeParked())
-                .parkingType(parkingSlot.getParkingType().toString())
-                .parkingStatus(parkingSlot.getParkingSlotStatus().toString())
-                .hourlyFee(getParkingHourlyFeeByVehicleType(vehicle.getVehicleType()))
-                .vehicleBrand(vehicle.getBrand())
-                .vehicleType(vehicle.getVehicleType().toString())
-                .build();
+//        return ParkingTicket.builder()
+//                .parkingSlotNumber(parkingSlot.getParkingNumber())
+//                .parkingTime(parkingSlot.getTimeParked())
+//                .parkingType(parkingSlot.getParkingType().toString())
+//                .parkingStatus(parkingSlot.getParkingSlotStatus().toString())
+//                .hourlyFee(getParkingHourlyFeeByVehicleType(vehicle.getVehicleType()))
+//                .vehicleBrand(vehicle.getBrand())
+//                .vehicleType(vehicle.getVehicleType().toString())
+//                .build();
+        return null;
     }
 
     private BigDecimal getParkingHourlyFeeByVehicleType(VehicleType vehicleType) {
@@ -138,5 +137,17 @@ public class ParkingLot {
             default:
                 return null;
         }
+    }
+
+    public List<ParkingSlot> getCompactParkingSlots() {
+        return null;
+    }
+
+    public List<ParkingSlot> getStandardParkingSlots() {
+        return null;
+    }
+
+    public List<ParkingSlot> getEvParkingSlots() {
+        return null;
     }
 }

@@ -1,33 +1,35 @@
 package codility;
 
-/**
- * Created on:  Oct 30, 2020
- * Questions: https://leetcode.com/discuss/interview-question/364760/
- * similar Question : https://leetcode.com/problems/maximal-network-rank/
- */
-
 public class MaxNetworkRank {
 
-    public static void main(String[] args) {
+    public static int maxNetworkRank(int[] A, int[] B) {
+        int maxRank = 0;
+        int[][] grid = new int[A.length][B.length];
 
+        for (int i = 0; i < A.length; i++) {
+            int row = A[i] - 1;
+            int col = B[i] - 1;
+            grid[row][col] = 1;
+            grid[col][row] = 1;
+        }
+
+        for (int i = 1; i < A.length; i++) {
+            int counter = 0;
+            for (int j = 0; j < B.length; j++) {
+                if (grid[i][j] == 1 || grid[i - 1][j] == 1) {
+                    counter += 1;
+                }
+            }
+            maxRank = Math.max(maxRank, counter);
+        }
+
+        return maxRank;
     }
 
-    public static int maximalNetworkRank(int n, int[][] roads) {
-        int[] count = new int[n];
-        boolean[][] hasRoad = new boolean[n][n];
-        for (int[] road : roads) {
-            count[road[0]]++;
-            count[road[1]]++;
-            hasRoad[road[0]][road[1]] = hasRoad[road[1]][road[0]] = true;
-        }
-        int max = 0;
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < n; j++) {
-                if (i == j) continue;
-                int val = count[i] + count[j] - (hasRoad[i][j] ? 1 : 0);
-                max = Math.max(max, val);
-            }
-        }
-        return max;
+    public static void main(String[] args) {
+        System.out.println(maxNetworkRank(new int[]{1, 2, 3, 3}, new int[]{2, 3, 1, 4}));
     }
 }
+  
+
+                                 

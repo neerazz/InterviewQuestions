@@ -1,8 +1,5 @@
 package codility;
 
-import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.Arguments;
-import org.junit.jupiter.params.provider.MethodSource;
 
 import java.math.BigInteger;
 import java.net.InetAddress;
@@ -12,8 +9,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.function.BiFunction;
 import java.util.stream.Stream;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Created on:  Jun 24, 2021
@@ -26,31 +21,6 @@ public class IP4ValidationWithCIDR {
 
     public static void main(String[] args) {
 
-    }
-
-    static Stream<Arguments> inputOutputValues() {
-//        Expected Value, Actual Value
-        return Stream.of(
-                Arguments.of("10.1.1.5/24", "10.1.1.1", true),
-                Arguments.of("10.1.1.5/24", "10.1.1.4", true),
-                Arguments.of("10.1.1.5/24", "10.1.1.89", true),
-                Arguments.of("10.1.1.5/24", "10.1.1.254", true),
-                Arguments.of("10.1.1.5/24", "10.1.1.100", true),
-                Arguments.of("10.1.1.5/24", "10.1.1.255", true),
-                Arguments.of("10.1.1.5/24", "10.1.2.1", false),
-                Arguments.of("10.1.1.5/24", "10.1.3.1", false),
-                Arguments.of("10.1.1.5/24", "10.20.1.1", false),
-                Arguments.of("10.1.1.5/24", "10.1.12.1", false),
-                Arguments.of("10.1.1.5/24", "10.1.2.243", false)
-        );
-    }
-
-    static BiFunction<String, String, Object> function = IP4ValidationWithCIDR::isValidIPV4;
-
-    @ParameterizedTest
-    @MethodSource("inputOutputValues")
-    void runTest(String input1, String input2, Object expected) {
-        assertEquals(expected, function.apply(input1, input2));
     }
 
     public static boolean isValidIPV4(String cidr, String ipAddress) {

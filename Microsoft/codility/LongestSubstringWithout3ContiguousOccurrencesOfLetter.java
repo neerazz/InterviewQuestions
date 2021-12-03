@@ -1,39 +1,49 @@
-package codility;
-
-/**
- * Created on:  Oct 31, 2020
- * Questions: https://leetcode.com/discuss/interview-question/398031/
+package codility;/*
+ 
+ a a b b a a a a a b b
+ 
+ 
+  
  */
 
 public class LongestSubstringWithout3ContiguousOccurrencesOfLetter {
 
-    public static void main(String[] args) {
-        System.out.println(longestSubString("aabbaaaaabb"));
-        System.out.println(longestSubString("aabbaabbaabbaa"));
+    public static String maxContinousString(String input) {
+        if (input == null || input.length() < 2) return input;
+        String result = "";
+        int counter = 1, start = 0;
+        int len = input.length();
+        for (int i = 1; i < len; i++) {
+            if (input.charAt(i - 1) == input.charAt(i)) {
+                counter++;
+                if (counter == 3) {
+                    String temp = input.substring(start, i);
+                    if (result.length() < temp.length()) {
+                        result = temp;
+                        start = i;
+                    }
+                    counter = 1;
+                }
+            } else {
+                counter = 1;
+            }
+        }
+
+        String temp = input.substring(start, len);
+        if (result.length() < temp.length()) result = temp;
+        return result;
     }
 
-    private static String longestSubString(String str) {
-        int[] results = {0, 0, 0};
-        int p1 = 0, p2 = 0, len = str.length();
-        int count = 0;
-        while (p2 < len) {
-            if (p2 > 0 && str.charAt(p2) == str.charAt(p2 - 1)) {
-//                if we met two the same, letters increase the counter of the same letters
-                count++;
-            } else {
-//                if next letter is different drop the counter to 1
-                count = 1;
-            }
-            if (count > 2) {
-//                Bring the p1 pointer to p2-1;
-                p1 = p2 - 1;
-            } else if (p2 - p1 > results[0]) {
-                results[0] = p2 - p1;
-                results[1] = p1;
-                results[2] = p2;
-            }
-            p2++;
+    public static void main(String[] args) {
+        test(maxContinousString("aabbaaaaabb"), "aabbaa");
+        test(maxContinousString("aabbaabbaabbaa"), "aabbaabbaabbaa");
+    }
+
+    private static void test(String actual, String expected) {
+        if (actual.equals(expected)) {
+            System.out.println("PASSED!");
+        } else {
+            System.out.println(String.format("FAILED! Expected %s, but got: %s", expected, actual));
         }
-        return str.substring(results[1], results[2] + 1);
     }
 }
