@@ -17,11 +17,11 @@ Output: [aba, aab, baa]
 public class Permutations {
 
     public static void main(String[] args) {
-        System.out.println("*************** Solution 1 ********************");
+        System.out.println("*************** StackImplementation 1 ********************");
         System.out.println(permute("abc"));
         System.out.println(permute("aab"));
         System.out.println(permute_optimal("aaaaaaaaaaaaaaaaaa"));
-        System.out.println("*************** Solution 2 ********************");
+        System.out.println("*************** StackImplementation 2 ********************");
         System.out.println(permute_optimal("abc"));
         System.out.println(permute_optimal("aab"));
         System.out.println(permute_optimal("aaaaaaaaaaaaaaaaaa"));

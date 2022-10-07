@@ -30,11 +30,11 @@ package phone;
 public class JobScheduler {
 
     public static void main(String[] args) {
-        System.out.println("*************************** Solution 1 ************************");
+        System.out.println("*************************** StackImplementation 1 ************************");
         System.out.println(canScheduleNewJob(new int[][]{{10, 5}, {25, 15}}, new int[]{18, 7}) + " = true");
         System.out.println(canScheduleNewJob(new int[][]{{10, 5}, {25, 15}}, new int[]{12, 10}) + " = false");
         System.out.println(canScheduleNewJob(new int[][]{{10, 5}, {25, 15}}, new int[]{8, 10}) + " = false");
-        System.out.println("*************************** Solution 2 ************************");
+        System.out.println("*************************** StackImplementation 2 ************************");
         System.out.println(canScheduleNewJob_rev2(new int[][]{{10, 5}, {25, 15}}, new int[]{18, 7}) + " = true");
         System.out.println(canScheduleNewJob_rev2(new int[][]{{10, 5}, {25, 15}}, new int[]{12, 10}) + " = false");
         System.out.println(canScheduleNewJob_rev2(new int[][]{{10, 5}, {25, 15}}, new int[]{8, 10}) + " = false");

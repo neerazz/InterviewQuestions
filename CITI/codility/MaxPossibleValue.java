@@ -11,7 +11,7 @@ import java.io.*;
 public class MaxPossibleValue {
 
     public static void main(String[] args) {
-        System.out.println("*************************** Solution 1 *******************");
+        System.out.println("*************************** StackImplementation 1 *******************");
         System.out.println(solution(268) + " = 5268");
         System.out.println(solution(670) + " = 6750");
         System.out.println(solution(7643) + " = 76543");
@@ -19,7 +19,7 @@ public class MaxPossibleValue {
         System.out.println(solution(-999) + " = -5999");
         System.out.println(solution(-661) + " = -5661");
 
-        System.out.println("*************************** Solution 2 *******************");
+        System.out.println("*************************** StackImplementation 2 *******************");
         System.out.println(solution_2(268) + " = 5268");
         System.out.println(solution_2(670) + " = 6750");
         System.out.println(solution_2(7643) + " = 76543");

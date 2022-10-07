@@ -24,12 +24,12 @@ import java.util.Random;
  * <p>
  * -- Java cases --
  * Input:
- * Solution.solution(0)
+ * StackImplementation.solution(0)
  * Output:
  * 23571
  * <p>
  * Input:
- * Solution.solution(3)
+ * StackImplementation.solution(3)
  * Output:
  * 71113
  */

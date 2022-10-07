@@ -39,7 +39,7 @@ import java.util.stream.Collectors;
  * =========
  * <p>
  * To provide a Python solution, edit solution.py
- * To provide a Java solution, edit Solution.java
+ * To provide a Java solution, edit StackImplementation.java
  * <p>
  * Test cases
  * ==========
@@ -47,11 +47,11 @@ import java.util.stream.Collectors;
  * Note that it may also be run against hidden test cases not shown here.
  * <p>
  * Input:
- * Solution.solution({2, 0, 2, 2, 0})
+ * StackImplementation.solution({2, 0, 2, 2, 0})
  * Output:
  * 8
  * Input:
- * Solution.solution({-2, -3, 4, -5})
+ * StackImplementation.solution({-2, -3, 4, -5})
  * Output:
  * 60
  */
@@ -62,7 +62,7 @@ public class PowerHungry {
         System.out.println(solution(new int[]{0}) + " should be [0]");
         System.out.println(solution(new int[]{-2}) + " should be [-2]");
         System.out.println(solution(new int[]{-2, -3, 4, -5}) + " should be [60]");
-        System.out.println("******************** Optimal Solution **********************");
+        System.out.println("******************** Optimal StackImplementation **********************");
         System.out.println(solution_optimal(new int[]{2, 0, 2, 2, 0}) + " should be [8]");
         System.out.println(solution_optimal(new int[]{9}) + " should be [9]");
         System.out.println(solution_optimal(new int[]{0}) + " should be [0]");
