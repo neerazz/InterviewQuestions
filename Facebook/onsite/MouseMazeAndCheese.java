@@ -29,7 +29,7 @@ public class MouseMazeAndCheese {
             this.x = x;
             this.y = y;
         }
-        }
+    }
 
     static class Mouse {
 
